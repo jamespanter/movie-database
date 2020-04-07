@@ -5,12 +5,12 @@ import { Card, Button, FormControl, Form } from "react-bootstrap";
 
 const Dashboard = (props) => {
   const { data } = props;
-  const [searchContents, changeSearchContents] = useState("");
+  const [searchYear, changeSearchYear] = useState("");
 
   const printJsx = (array) => {
     return array.map((film) => {
       return (
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "18rem" }} key={film.Title}>
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
@@ -25,7 +25,9 @@ const Dashboard = (props) => {
   const filterResults = () => {
     let filteredArray = [...data.Search];
     filteredArray = filteredArray.filter((film) => {
-      return searchContents !== "" ? film.Year === searchContents : true;
+      return searchYear !== "" && searchYear.length === 4
+        ? film.Year === searchYear
+        : true;
     });
     return printJsx(filteredArray);
   };
@@ -39,9 +41,9 @@ const Dashboard = (props) => {
           type="text"
           placeholder="Search for year"
           className="mr-sm-2"
-          onChange={(e) => changeSearchContents(e.target.value)}
+          onChange={(e) => changeSearchYear(e.target.value)}
         />
-        <Button variant="success" onClick={() => filterResults(searchContents)}>
+        <Button variant="success" onClick={() => filterResults(searchYear)}>
           Filter
         </Button>
       </Form>

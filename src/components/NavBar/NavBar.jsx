@@ -17,7 +17,7 @@ const NavBar = (props) => {
           <Form inline>
             <FormControl
               type="text"
-              placeholder="Search"
+              placeholder="Search Movie"
               className="mr-sm-2"
               onChange={(e) => changeSearchContents(e.target.value)}
             />
