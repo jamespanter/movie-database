@@ -33,7 +33,7 @@ const Dashboard = (props) => {
   const printJsx = (array) => {
     return array.map((film) => {
       return (
-        <Card style={{ width: "18rem" }} key={film.Title}>
+        <Card style={{ width: "18rem" }} key={film.Title} variant="warning">
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
@@ -83,7 +83,7 @@ const Dashboard = (props) => {
                 <Card.Subtitle className="mb-2 text-muted">
                   Meta Score:
                 </Card.Subtitle>
-                <Card.Text>{movieData.MetaScore}</Card.Text>
+                <Card.Text>{movieData.Metascore}</Card.Text>
                 <Card.Subtitle className="mb-2 text-muted">
                   imdb Rating:
                 </Card.Subtitle>
@@ -115,7 +115,7 @@ const Dashboard = (props) => {
       ) : null}
       <div className={styles.filter}>
         <Form inline>
-          <Form.Text className="text-muted">Show results from year:</Form.Text>
+          <Form.Text className="text-muted">FILTER:</Form.Text>
           <FormControl
             type="text"
             placeholder="Year"
