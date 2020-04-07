@@ -56,18 +56,52 @@ const Dashboard = (props) => {
               {/* <Card.Img variant="top" src={movieData.Poster} /> */}
               <Card.Body>
                 <Card.Title>Title: {movieData.Title}</Card.Title>
-                <Card.Text>Released: {movieData.Released}</Card.Text>
-                <Card.Text>Genre: {movieData.Genre}</Card.Text>
-                <Card.Text>Director: {movieData.Director}</Card.Text>
-                <Card.Text>Writer: {movieData.Writer}</Card.Text>
-                <Card.Text>Country: {movieData.Country}</Card.Text>
-                <Card.Text>Box Office: {movieData.BoxOffice}</Card.Text>
-                <Card.Text>Meta Score: {movieData.MetaScore}</Card.Text>
-                <Card.Text>imdb Rating: {movieData.imdbRating}</Card.Text>
-                <Card.Text>Rated: {movieData.Rated}</Card.Text>
-                <Card.Text>Language: {movieData.Language}</Card.Text>
-                <Card.Text>Production: {movieData.Production}</Card.Text>
-                <Card.Text>Plot: {movieData.Plot}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Released:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Released}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Genre:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Genre}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Director:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Director}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Writer:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Writer}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Country:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Country}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Box Office:
+                </Card.Subtitle>
+                <Card.Text> {movieData.BoxOffice}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Meta Score:
+                </Card.Subtitle>
+                <Card.Text>{movieData.MetaScore}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  imdb Rating:
+                </Card.Subtitle>
+                <Card.Text> {movieData.imdbRating}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Rated:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Rated}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Language:
+                </Card.Subtitle>
+                <Card.Text>{movieData.Language}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Production:
+                </Card.Subtitle>
+                <Card.Text> {movieData.Production}</Card.Text>
+                <Card.Subtitle className="mb-2 text-muted">Plot:</Card.Subtitle>
+                <Card.Text> {movieData.Plot}</Card.Text>
                 <Button
                   variant="warning"
                   onClick={() => toggleModalShown(false)}
