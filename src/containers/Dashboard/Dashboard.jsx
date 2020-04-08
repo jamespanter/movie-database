@@ -14,7 +14,6 @@ const Dashboard = (props) => {
       .then((response) => response.json())
       .then((movieData) => {
         setMovieData(movieData);
-        console.log(movieData);
         toggleModalShown(true);
       })
       .catch((error) => console.log(error));
@@ -33,7 +32,7 @@ const Dashboard = (props) => {
   const printJsx = (array) => {
     return array.map((film) => {
       return (
-        <Card style={{ width: "18rem" }} key={film.Title} variant="warning">
+        <Card style={{ width: "20rem" }} key={film.imdbID} variant="warning">
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
@@ -127,7 +126,14 @@ const Dashboard = (props) => {
 
       <div className={styles.filmDisplay}>{filterResults()}</div>
     </>
-  ) : null;
+  ) : (
+    <div className={styles.noResults}>
+      <h3>No Results!</h3>
+      <p>This could be because:</p>
+      <p>1. Your search was not specific enough</p>
+      <p>2. There are no movies by your search terms</p>
+    </div>
+  );
 };
 
 export default Dashboard;

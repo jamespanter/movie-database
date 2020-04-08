@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  min-height: 80vh;
+
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
 }
 
 .filter {
@@ -9,11 +15,13 @@
   justify-content: flex-end;
   font-size: 32px;
   margin: 20px;
+  min-height: 5vh;
 
   input {
-    margin: 10px;
+    margin-left: 10px;
   }
 }
+
 .modalContainer {
   height: 100vh;
   width: 100vw;
@@ -35,12 +43,40 @@
     z-index: 10;
     background-color: white;
     opacity: 1;
-    width: 50%;
+    width: 90%;
     height: 80%;
     border-radius: 15px;
 
     img {
       height: 50%;
+    }
+  }
+}
+
+.noResults {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100vh - 60px);
+
+  h3 {
+    font-size: 40px;
+  }
+
+  p {
+    width: 60%;
+    font-size: 26px;
+    min-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .modalContainer {
+    .modal {
+      width: 50%;
     }
   }
 }
