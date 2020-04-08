@@ -8,29 +8,26 @@ const NavBar = (props) => {
   const [searchContents, changeSearchContents] = useState("");
 
   return (
-    <>
-      <Navbar bg="warning" expand="lg">
-        <Navbar.Brand href="#home">Movie Database</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto"></Nav>
-          <Form inline>
-            <FormControl
-              type="text"
-              placeholder="Search Movie"
-              className="mr-sm-2"
-              onChange={(e) => changeSearchContents(e.target.value)}
-            />
-            <Button
-              variant="success"
-              onClick={() => changeCurrentSearch(searchContents)}
-            >
-              Search
-            </Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
-    </>
+    <Navbar fixed="top" bg="dark" expand="lg">
+      <Navbar.Brand href="#home" className="text-light">
+        Movie Database
+      </Navbar.Brand>
+      <Nav className="mr-auto"></Nav>
+      <Form inline>
+        <FormControl
+          type="text"
+          placeholder="Search Movie"
+          className="mr-sm-2"
+          onChange={(e) => changeSearchContents(e.target.value)}
+        />
+        <Button
+          variant="info"
+          onClick={() => changeCurrentSearch(searchContents)}
+        >
+          Search
+        </Button>
+      </Form>
+    </Navbar>
   );
 };
 

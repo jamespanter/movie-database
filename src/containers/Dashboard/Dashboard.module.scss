@@ -1,8 +1,13 @@
+.dashboard {
+  margin-top: 56px;
+  background-color: rgba(133, 155, 177, 0.603);
+  min-height: calc(100vh);
+}
+
 .filmDisplay {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  min-height: 80vh;
 
   img {
     height: 400px;
@@ -14,7 +19,6 @@
   display: flex;
   justify-content: flex-end;
   font-size: 32px;
-  margin: 20px;
   min-height: 5vh;
 
   input {

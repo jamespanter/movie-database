@@ -32,12 +32,17 @@ const Dashboard = (props) => {
   const printJsx = (array) => {
     return array.map((film) => {
       return (
-        <Card style={{ width: "20rem" }} key={film.imdbID} variant="warning">
+        <Card
+          style={{ width: "20rem" }}
+          key={film.imdbID}
+          bg="light"
+          className="text-center"
+        >
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
             <Card.Text>{film.Year}</Card.Text>
-            <Button variant="primary" onClick={() => fetchData(film.imdbID)}>
+            <Button variant="info" onClick={() => fetchData(film.imdbID)}>
               More info
             </Button>
           </Card.Body>
@@ -47,7 +52,7 @@ const Dashboard = (props) => {
   };
 
   return data && data.Search ? (
-    <>
+    <div className={styles.dashboard}>
       {modalShown ? (
         <div className={styles.modalContainer}>
           <div className={styles.modal}>
@@ -123,15 +128,16 @@ const Dashboard = (props) => {
           />
         </Form>
       </div>
-
       <div className={styles.filmDisplay}>{filterResults()}</div>
-    </>
+    </div>
   ) : (
-    <div className={styles.noResults}>
-      <h3>No Results!</h3>
-      <p>This could be because:</p>
-      <p>1. Your search was not specific enough</p>
-      <p>2. There are no movies by your search terms</p>
+    <div className={styles.dashboard}>
+      <div className={styles.noResults}>
+        <h3>No Results!</h3>
+        <p>This could be because:</p>
+        <p>1. Your search was not specific enough</p>
+        <p>2. There are no movies by your search terms</p>
+      </div>
     </div>
   );
 };

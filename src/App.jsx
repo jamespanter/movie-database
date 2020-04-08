@@ -6,7 +6,7 @@ import Dashboard from "./containers/Dashboard";
 
 const App = () => {
   const [data, setData] = useState(null);
-  const [currentSearch, changeCurrentSearch] = useState("");
+  const [currentSearch, changeCurrentSearch] = useState("harry");
 
   const fetchData = (search) => {
     fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=4c65ecef&s=${search}`)
