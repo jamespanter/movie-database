@@ -4,23 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 
 const Modal = (props) => {
-  const {
-    movieData,
-    toggleModalShown,
-    bodyOverflow,
-    toggleBodyOverlow,
-  } = props;
-
-  const hideScroll = () => {
-    console.log("function called");
-    bodyOverflow
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  };
-
-  useEffect(() => {
-    hideScroll();
-  }, [bodyOverflow]);
+  const { movieData, toggleModalShown } = props;
 
   return (
     <div className={styles.modalContainer}>
@@ -65,7 +49,6 @@ const Modal = (props) => {
               variant="warning"
               onClick={() => {
                 toggleModalShown(false);
-                toggleBodyOverlow(false);
               }}
             >
               Close
