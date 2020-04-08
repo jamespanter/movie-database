@@ -9,7 +9,7 @@ const App = () => {
   const [currentSearch, changeCurrentSearch] = useState("");
 
   const fetchData = (search) => {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=4c65ecef&s=${search}`)
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=4c65ecef&s=${search}`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);

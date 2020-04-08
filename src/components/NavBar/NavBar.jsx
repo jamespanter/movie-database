@@ -5,7 +5,7 @@ import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap";
 
 const NavBar = (props) => {
   const { changeCurrentSearch } = props;
-  const [searchContents, changeSearchContents] = useState("Lord");
+  const [searchContents, changeSearchContents] = useState("");
 
   return (
     <>

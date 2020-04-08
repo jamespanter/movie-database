@@ -10,7 +10,7 @@ const Dashboard = (props) => {
   const [modalShown, toggleModalShown] = useState(false);
 
   const fetchData = (search) => {
-    fetch(`http://www.omdbapi.com/?i=${search}&apikey=4c65ecef&`)
+    fetch(`https://www.omdbapi.com/?i=${search}&apikey=4c65ecef&`)
       .then((response) => response.json())
       .then((movieData) => {
         setMovieData(movieData);
