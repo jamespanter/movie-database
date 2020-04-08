@@ -8,12 +8,17 @@ const NavBar = (props) => {
   const [searchContents, changeSearchContents] = useState("");
 
   return (
-    <Navbar fixed="top" bg="dark" expand="lg">
+    <Navbar
+      fixed="top"
+      bg="dark"
+      expand="lg"
+      className="d-flex justify-content-center"
+    >
       <Navbar.Brand href="#home" className="text-light">
         Movie Database
       </Navbar.Brand>
       <Nav className="mr-auto"></Nav>
-      <Form inline>
+      <Form inline style={{ flexFlow: "unset" }}>
         <FormControl
           type="text"
           placeholder="Search Movie"
