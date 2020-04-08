@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button, FormControl, Form } from "react-bootstrap";
 
 const Dashboard = (props) => {
-  const { data } = props;
+  const { data, fetchPage } = props;
   const [searchYear, changeSearchYear] = useState("");
   const [movieData, setMovieData] = useState(null);
   const [modalShown, toggleModalShown] = useState(false);
@@ -37,7 +37,10 @@ const Dashboard = (props) => {
           key={film.imdbID}
           bg="light"
           className={`text-center m-2 ${styles.fadeInBck}`}
-          style={{ animationDelay: `${index * 0.1}s`, width: "18rem" }}
+          style={{
+            animationDelay: `${index * 0.07}s`,
+            width: "18rem",
+          }}
         >
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>

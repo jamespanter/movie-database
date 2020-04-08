@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap";
 
 const NavBar = (props) => {
-  const { changeCurrentSearch } = props;
+  const { changeCurrentSearch, setData, setFetchPage } = props;
   const [searchContents, changeSearchContents] = useState("");
 
   return (
@@ -23,11 +23,18 @@ const NavBar = (props) => {
           type="text"
           placeholder="Search Movie"
           className="mr-sm-2"
-          onChange={(e) => changeSearchContents(e.target.value)}
+          onChange={(e) => {
+            changeSearchContents(e.target.value);
+          }}
         />
         <Button
           variant="info"
-          onClick={() => changeCurrentSearch(searchContents)}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            setData("");
+            setFetchPage("1");
+            changeCurrentSearch(searchContents);
+          }}
         >
           Search
         </Button>
