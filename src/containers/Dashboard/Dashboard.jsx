@@ -9,6 +9,7 @@ const Dashboard = (props) => {
   const [searchYear, changeSearchYear] = useState("");
   const [movieData, setMovieData] = useState(null);
   const [modalShown, toggleModalShown] = useState(false);
+  const [bodyOverflow, toggleBodyOverlow] = useState(false);
 
   const fetchData = (search) => {
     fetch(`https://www.omdbapi.com/?i=${search}&apikey=4c65ecef&`)
@@ -31,19 +32,25 @@ const Dashboard = (props) => {
   };
 
   const printJsx = (array) => {
-    return array.map((film) => {
+    return array.map((film, index) => {
       return (
         <Card
-          style={{ width: "18rem" }}
           key={film.imdbID}
           bg="light"
-          className="text-center m-2"
+          className={`text-center m-2 ${styles.fadeInBck}`}
+          style={{ animationDelay: `${index * 0.1}s`, width: "18rem" }}
         >
           <Card.Img variant="top" src={film.Poster} />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
             <Card.Text>{film.Year}</Card.Text>
-            <Button variant="info" onClick={() => fetchData(film.imdbID)}>
+            <Button
+              variant="info"
+              onClick={() => {
+                fetchData(film.imdbID);
+                toggleBodyOverlow(true);
+              }}
+            >
               More info
             </Button>
           </Card.Body>
@@ -55,7 +62,12 @@ const Dashboard = (props) => {
   return data && data.Search ? (
     <div className={styles.dashboard}>
       {modalShown ? (
-        <Modal movieData={movieData} toggleModalShown={toggleModalShown} />
+        <Modal
+          movieData={movieData}
+          toggleModalShown={toggleModalShown}
+          toggleBodyOverlow={toggleBodyOverlow}
+          bodyOverflow={bodyOverflow}
+        />
       ) : null}
       <div className={styles.filter}>
         <Form inline>
