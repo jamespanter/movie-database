@@ -32,16 +32,19 @@ const Dashboard = (props) => {
   const printJsx = (array) => {
     return array.map((film, index) => {
       return (
-        <div className={styles.cardContainer} key={film.imdbID}>
+        <div
+          className={`${styles.cardContainer} ${styles.fadeInBck}`}
+          key={film.imdbID}
+          style={{
+            animationDelay: `${
+              +index < 10 ? index * 0.07 : (index - 10 * (fetchPage - 2)) * 0.07
+            }s`,
+          }}
+        >
           <Card
             bg="light"
-            className={`text-center border-0 ${styles.fadeInBck}`}
+            className="text-center border-0"
             style={{
-              animationDelay: `${
-                +index < 10
-                  ? index * 0.07
-                  : (index - 10 * (fetchPage - 2)) * 0.07
-              }s`,
               width: "18rem",
             }}
           >
