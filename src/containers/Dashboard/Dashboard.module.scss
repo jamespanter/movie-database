@@ -2,48 +2,60 @@
   margin-top: 56px;
   background-color: rgba(133, 155, 177, 0.603);
   min-height: calc(100vh);
-}
 
-.filmDisplay {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  .filmDisplay {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-  img {
-    height: 350px;
-    object-fit: cover;
-    object-position: top;
-  }
-}
-
-.filter {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 32px;
-  min-height: 5vh;
-
-  input {
-    margin-left: 10px;
-  }
-}
-
-.noResults {
-  padding: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  height: calc(100vh - 60px);
-
-  h3 {
-    font-size: 40px;
+    img {
+      height: 350px;
+      object-fit: cover;
+      object-position: top;
+    }
   }
 
-  p {
-    width: 60%;
-    font-size: 26px;
-    min-width: 300px;
+  .filter {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 32px;
+    min-height: 5vh;
+
+    input {
+      margin-left: 10px;
+    }
+  }
+
+  .cardContainer {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2), 0 4px 7px rgba(0, 0, 0, 0.27);
+    margin: 0.5rem;
+
+    &:hover {
+      transition: all 0.1s;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.27),
+        0 10px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .noResults {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    h3 {
+      font-size: 40px;
+    }
+
+    p {
+      width: 60%;
+      font-size: 26px;
+      min-width: 300px;
+    }
   }
 }
 

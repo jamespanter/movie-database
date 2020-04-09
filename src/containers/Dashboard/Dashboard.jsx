@@ -32,39 +32,42 @@ const Dashboard = (props) => {
   const printJsx = (array) => {
     return array.map((film, index) => {
       return (
-        <Card
-          key={film.imdbID}
-          bg="light"
-          className={`text-center m-2 ${styles.fadeInBck}`}
-          style={{
-            animationDelay: `${
-              index < 10 ? index * 0.07 : (index - 10 * (fetchPage - 2)) * 0.07
-            }s`,
-            width: "18rem",
-          }}
-        >
-          <Card.Img
-            variant="top"
-            src={
-              film.Poster !== "N/A"
-                ? film.Poster
-                : "https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg"
-            }
-            alt={film.Title}
-          />
-          <Card.Body>
-            <Card.Title>{film.Title}</Card.Title>
-            <Card.Text>{film.Year}</Card.Text>
-            <Button
-              variant="info"
-              onClick={() => {
-                fetchData(film.imdbID);
-              }}
-            >
-              More info
-            </Button>
-          </Card.Body>
-        </Card>
+        <div className={styles.cardContainer} key={film.imdbID}>
+          <Card
+            bg="light"
+            className={`text-center border-0 ${styles.fadeInBck}`}
+            style={{
+              animationDelay: `${
+                +index < 10
+                  ? index * 0.07
+                  : (index - 10 * (fetchPage - 2)) * 0.07
+              }s`,
+              width: "18rem",
+            }}
+          >
+            <Card.Img
+              variant="top"
+              src={
+                film.Poster !== "N/A"
+                  ? film.Poster
+                  : "https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg"
+              }
+              alt={film.Title}
+            />
+            <Card.Body>
+              <Card.Title style={{ height: "48px" }}>{film.Title}</Card.Title>
+              <Card.Text>{film.Year}</Card.Text>
+              <Button
+                variant="info"
+                onClick={() => {
+                  fetchData(film.imdbID);
+                }}
+              >
+                More info
+              </Button>
+            </Card.Body>
+          </Card>
+        </div>
       );
     });
   };

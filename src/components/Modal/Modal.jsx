@@ -14,17 +14,19 @@ const Modal = (props) => {
           <Card.Body className="py-0">
             <div
               className="sticky-top d-flex justify-content-between bg-white"
-              style={{ paddingTop: "1.25rem" }}
+              style={{ paddingTop: "1.25rem", marginBottom: "1rem" }}
             >
               <Card.Title className="mt-1">Title: {movieData.Title}</Card.Title>
-              <Button
-                variant="warning"
-                onClick={() => {
-                  toggleModalShown(false);
-                }}
-              >
-                Close
-              </Button>
+              <div className={styles.button}>
+                <Button
+                  variant="warning"
+                  onClick={() => {
+                    toggleModalShown(false);
+                  }}
+                >
+                  Close
+                </Button>
+              </div>
             </div>
             <Card.Subtitle className="mb-2 text-muted">Released:</Card.Subtitle>
             <Card.Text> {movieData.Released}</Card.Text>
