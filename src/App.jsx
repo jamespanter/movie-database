@@ -9,6 +9,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [currentSearch, changeCurrentSearch] = useState("harry");
   const [fetchPage, setFetchPage] = useState("1");
+  const [searchYear, changeSearchYear] = useState("");
 
   useBottomScrollListener(() => {
     fetchData(currentSearch);
@@ -38,8 +39,9 @@ const App = () => {
         changeCurrentSearch={changeCurrentSearch}
         setData={setData}
         setFetchPage={setFetchPage}
+        changeSearchYear={changeSearchYear}
       />
-      <Dashboard data={data} fetchPage={fetchPage} />
+      <Dashboard data={data} fetchPage={fetchPage} searchYear={searchYear} />
     </div>
   );
 };

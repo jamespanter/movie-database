@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Dashboard.module.scss";
 import Modal from "../../components/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Button, FormControl, Form } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 const Dashboard = (props) => {
-  const { data, fetchPage } = props;
-  const [searchYear, changeSearchYear] = useState("");
+  const { data, fetchPage, searchYear } = props;
   const [movieData, setMovieData] = useState(null);
   const [modalShown, toggleModalShown] = useState(false);
 
@@ -75,17 +74,7 @@ const Dashboard = (props) => {
       {modalShown ? (
         <Modal movieData={movieData} toggleModalShown={toggleModalShown} />
       ) : null}
-      <div className={styles.filter}>
-        <Form inline>
-          <Form.Text className="text-muted">FILTER:</Form.Text>
-          <FormControl
-            type="text"
-            placeholder="Year"
-            className="mr-sm-2"
-            onChange={(e) => changeSearchYear(e.target.value)}
-          />
-        </Form>
-      </div>
+
       <div className={styles.filmDisplayContainer}>
         <div className={styles.filmDisplay}>{filterResults()}</div>
       </div>

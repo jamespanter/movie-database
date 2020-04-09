@@ -4,7 +4,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap";
 
 const NavBar = (props) => {
-  const { changeCurrentSearch, setData, setFetchPage } = props;
+  const {
+    changeCurrentSearch,
+    setData,
+    setFetchPage,
+    changeSearchYear,
+  } = props;
   const [searchContents, changeSearchContents] = useState("");
 
   return (
@@ -19,6 +24,16 @@ const NavBar = (props) => {
       </Navbar.Brand>
       <Nav className="mr-auto"></Nav>
       <Form inline style={{ flexFlow: "unset" }}>
+        <div className={styles.filter}>
+          <Form inline>
+            <FormControl
+              type="text"
+              placeholder="Filter Year"
+              className="mr-sm-2"
+              onChange={(e) => changeSearchYear(e.target.value)}
+            />
+          </Form>
+        </div>
         <FormControl
           type="text"
           placeholder="Search Movie"
