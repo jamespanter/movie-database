@@ -32,7 +32,6 @@ const Dashboard = (props) => {
 
   const printJsx = (array) => {
     return array.map((film, index) => {
-      console.log(fetchPage);
       return (
         <Card
           key={film.imdbID}
@@ -45,7 +44,15 @@ const Dashboard = (props) => {
             width: "18rem",
           }}
         >
-          <Card.Img variant="top" src={film.Poster} />
+          <Card.Img
+            variant="top"
+            src={
+              film.Poster !== "N/A"
+                ? film.Poster
+                : "https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg"
+            }
+            alt={film.Title}
+          />
           <Card.Body>
             <Card.Title>{film.Title}</Card.Title>
             <Card.Text>{film.Year}</Card.Text>
@@ -86,8 +93,8 @@ const Dashboard = (props) => {
       <div className={styles.noResults}>
         <h3>No Results!</h3>
         <p>This could be because:</p>
-        <p>1. Your search was not specific enough</p>
-        <p>2. There are no movies by your search terms</p>
+        <p>1. There are no movies by your search terms</p>
+        <p>2. Your search was not specific enough</p>
       </div>
     </div>
   );

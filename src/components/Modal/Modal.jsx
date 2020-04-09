@@ -7,7 +7,7 @@ const Modal = (props) => {
   const { movieData, toggleModalShown } = props;
 
   return (
-    <div className={styles.modalContainer}>
+    <div className={`${styles.modalContainer} ${styles.fadeInBck}`}>
       <div className={styles.modal}>
         <Card style={{ width: "100%", flexDirection: "row" }}>
           {/* <Card.Img variant="top" src={movieData.Poster} /> */}
