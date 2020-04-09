@@ -24,6 +24,10 @@
     height: 80%;
     border-radius: 5px;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     img {
       height: 50%;
     }
@@ -31,9 +35,6 @@
     & > div {
       height: 100%;
       border: none;
-    }
-    button {
-      margin-bottom: 20px;
     }
   }
 }

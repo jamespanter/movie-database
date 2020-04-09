@@ -11,8 +11,21 @@ const Modal = (props) => {
       <div className={styles.modal}>
         <Card style={{ width: "100%", flexDirection: "row" }}>
           {/* <Card.Img variant="top" src={movieData.Poster} /> */}
-          <Card.Body>
-            <Card.Title className="mt-3">Title: {movieData.Title}</Card.Title>
+          <Card.Body className="py-0">
+            <div
+              className="sticky-top d-flex justify-content-between bg-white"
+              style={{ paddingTop: "1.25rem" }}
+            >
+              <Card.Title className="mt-1">Title: {movieData.Title}</Card.Title>
+              <Button
+                variant="warning"
+                onClick={() => {
+                  toggleModalShown(false);
+                }}
+              >
+                Close
+              </Button>
+            </div>
             <Card.Subtitle className="mb-2 text-muted">Released:</Card.Subtitle>
             <Card.Text> {movieData.Released}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">Genre:</Card.Subtitle>
@@ -45,14 +58,6 @@ const Modal = (props) => {
             <Card.Text> {movieData.Production}</Card.Text>
             <Card.Subtitle className="mb-2 text-muted">Plot:</Card.Subtitle>
             <Card.Text> {movieData.Plot}</Card.Text>
-            <Button
-              variant="warning"
-              onClick={() => {
-                toggleModalShown(false);
-              }}
-            >
-              Close
-            </Button>
           </Card.Body>
         </Card>
       </div>

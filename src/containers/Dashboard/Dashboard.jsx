@@ -86,7 +86,9 @@ const Dashboard = (props) => {
           />
         </Form>
       </div>
-      <div className={styles.filmDisplay}>{filterResults()}</div>
+      <div className={styles.filmDisplayContainer}>
+        <div className={styles.filmDisplay}>{filterResults()}</div>
+      </div>
     </div>
   ) : (
     <div className={styles.dashboard}>
