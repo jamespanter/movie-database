@@ -40,7 +40,7 @@ const Dashboard = (props) => {
           className={`text-center m-2 ${styles.fadeInBck}`}
           style={{
             animationDelay: `${
-              index < 10 ? index * 0.07 : (index - 10) * 0.07
+              index < 10 ? index * 0.07 : (index - 10 * (fetchPage - 2)) * 0.07
             }s`,
             width: "18rem",
           }}
