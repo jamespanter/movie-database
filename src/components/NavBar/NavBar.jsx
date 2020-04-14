@@ -20,27 +20,24 @@ const NavBar = (props) => {
         expand="lg"
         className="d-flex justify-content-center"
       >
-        <Navbar.Brand href="#home" className="text-light">
+        <Navbar.Brand href="#home" className="text-light d-none d-md-block">
           Movie Database
         </Navbar.Brand>
-        <Nav className="mr-auto"></Nav>
         <Form inline style={{ flexFlow: "unset" }}>
-          <div className={styles.filter}>
-            <FormControl
-              type="text"
-              placeholder="Filter Year"
-              className="mr-sm-2"
-              onChange={(e) => changeSearchYear(e.target.value)}
-            />
-            <FormControl
-              type="text"
-              placeholder="Search Movie"
-              className="mr-sm-2"
-              onChange={(e) => {
-                changeSearchContents(e.target.value);
-              }}
-            />
-          </div>
+          <FormControl
+            type="text"
+            placeholder="Year"
+            className="mr-2"
+            onChange={(e) => changeSearchYear(e.target.value)}
+          />
+          <FormControl
+            type="text"
+            placeholder="Movie"
+            className="mr-2"
+            onChange={(e) => {
+              changeSearchContents(e.target.value);
+            }}
+          />
           <Button
             variant="info"
             onClick={() => {
